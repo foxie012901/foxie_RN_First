@@ -85,10 +85,6 @@ export default class Gthree extends Component {
         // console.warn(index)
         return <Text style={styles.row}>{item}</Text>
     }
-    storeChange = () => {
-        this.setState(store.getState())
-        //当我感知到store的数据发生变化的时候我就去调用。getstate方法从store里面重新取一次数据,然后通过setState替换掉当前的state里的数据，这样我们当前组件的数据就和我们的store里的数据同步了。
-    }
 }
 
 const styles = StyleSheet.create({
