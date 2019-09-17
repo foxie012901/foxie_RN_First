@@ -1,6 +1,23 @@
 # redux 的使用
     安装  -yarn add redux
 
+## 文件 介绍
+    index.js 一个store的主文件
+    reducer.js 一个store的管理员文件
+    actionTypes.js 统一管理我们的action type字符串，以免代码量巨大，出现错误难以定位
+    actionCreators.js 统一管理我们的action创建事件，提高维护性，前端有自动化测试工具，把action都写在一个文件里，做自动化测试时也比较方便
+
+## 基础 要点
+    1. store 是唯一的  在index.js里创建
+    2. 只有store能够改变自己的内容，而不是reducer，reducer只是接到action创建了一个新的变量，改变了新的变量，然后返回给store，store接到reducer的返回并修改了自己的内容
+    3. reducer必须是一个纯函数，纯函数指的是给定固定的输入，就一定会有固定的输出，而且不会有任何副作用，所以，reducer里不能有对异步，时间，日期等变化的或不一定的操作。副作用指的是对不该你操作的参数进行修改，就属于副作用
+
+## 核心api
+    1. createStore 可以帮助我们创建一个store  ，在index.js文件里
+    2. store.dispatch  可以帮助我们派发action，传递给store，在使用的组件中
+    3. store.getState 可以帮助我们获取到store里面的所有内容  在使用的组件中
+    4. store.subscribe 可以帮助我们订阅store的改变，只要store改变，他订阅接收到的回调函数就会被执行。  在使用的组件中
+
 # yarn add redux
 ```js 创建仓库
     //创建一个store文件夹
